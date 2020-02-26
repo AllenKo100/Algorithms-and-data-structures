@@ -1,0 +1,220 @@
+{
+    "id": 1770,
+    "name": "Algoritmi i strukture podataka (2016\/2017), Zadaca 4, zadatak 1",
+    "language": "C++",
+    "required_compiler": "g++",
+    "preferred_compiler": "g++",
+    "compiler_features": [
+
+    ],
+    "compiler_options": "-std=c++11 -O1 -Wall -Wuninitialized -Winit-self -Wfloat-equal -Wno-sign-compare -Werror=implicit-function-declaration -Werror=vla -pedantic -lm -pass-exit-codes",
+    "compiler_options_debug": "-std=c++11 -ggdb -lm -pass-exit-codes",
+    "compile": "true",
+    "run": "false",
+    "test": "true",
+    "debug": "true",
+    "profile": "true",
+    "test_specifications": [
+        {
+            "id": 1771,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/ Osnovni test funkcionalnosti AVLStabloMapa\nAVLStabloMapa<std::string,std::string> m;\nm[\"Sarajevo\"] = \"BiH\";\nm[\"Zagreb\"] = \"Hrvatska\";\ncout << m.brojElemenata() << \" \" << m[\"Zagreb\"] << \" '\"; \/\/ 2 Hrvatska\n\n\/\/ Test praznih elemenata\ncout << m[\"Beograd\"] <<\"' '\"; \/\/ ''\ncout << m[\"zagreb\"] << \"' \"; \/\/ ''\nm.obrisi(\"Zagreb\");\n\n\/\/ Potpuno korektna AVLStabloMapa nece kreirati objekte \"Beograd\" i \"zagreb\"\n\/\/ jer oni nemaju vrijednosti pa ce se ispod ispisati 1\n\/\/ Ali to zahtijeva implementaciju \"Pristupnika\" pa cemo priznavati\n\/\/ rjesenje koje ispise broj 3\ncout << m.brojElemenata(); \/\/ 3 ili 1\n\n\/\/ Test brisanja\ncout << \" '\" << m[\"Zagreb\"] << \"' \" ; \/\/ ''\nm.obrisi();\ncout << m.brojElemenata(); \/\/ 0\ncout << \" '\" << m[\"Sarajevo\"] << \"' \"; \/\/ ''",
+            "global_above_main": "#include <string>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "2 Hrvatska '' '' 1 '' 0 ''",
+                "2 Hrvatska '' '' 3 '' 0 ''"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1772,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "AVLStabloMapa<std::string,std::string> m;\nm[\"Sarajevo\"] = \"BiH\";\nm[\"Zagreb\"] = \"Hrvatska\";\n{\n        \/\/ Konstruktor kopije\n\tAVLStabloMapa<std::string,std::string> m2(m);\n        \/\/ Operator dodjele\n\tAVLStabloMapa<std::string,std::string> m3;\n\tm3[\"Kiseljak\"] = \"BiH\";\n\tcout << (m3=m).brojElemenata() << \" \"; \/\/ 2\n        \/\/ Destruktivna samododjela\n\tcout << (m=m).brojElemenata() << \" \"; \/\/ 2\n\n        \/\/ Plitka kopija\n\tm.obrisi(\"Sarajevo\");\n\tcout << m2.brojElemenata() << \" \"; \/\/ 2\n        cout << m2[\"Sarajevo\"] << \" \"; \/\/ BiH\n        cout << m3.brojElemenata() << \" \"; \/\/ 2\n        cout << m3[\"Sarajevo\"] << \" \"; \/\/ BiH\n}\ncout << m.brojElemenata(); \/\/ 1\ncout << \" '\" << m[\"Sarajevo\"] << \"' \"; \/\/ ''\nm.obrisi();\ncout << m.brojElemenata(); \/\/ 0\ncout << \" '\" << m[\"Zagreb\"] << \"'\"; \/\/ ''",
+            "global_above_main": "#include <string>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "2 2 2 BiH 2 BiH 1 '' 0 ''"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1773,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/ Test rada sa tipom koji nema default konstruktor (std::vector)\nAVLStabloMapa <std::string, std::vector<std::string> > m;\nstd::vector<std::string> gradovi;\ngradovi.push_back(\"Sarajevo\");\ngradovi.push_back(\"Mostar\");\ngradovi.push_back(\"Banja Luka\");\nm[\"BiH\"]=gradovi;\ncout << m[\"BiH\"].size() << \" \";\nm[\"BiH\"].push_back(\"Tuzla\");\ncout << m[\"BiH\"][0] << \" \" << m[\"BiH\"][3] << \" \" << m[\"BiH\"].size();",
+            "global_above_main": "#include <string>\n#include <vector>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "3 Sarajevo Tuzla 4"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1774,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/ Const korektnost i test rada sa tipom int\nAVLStabloMapa <int, int> m;\nm[100] = 200;\nconst AVLStabloMapa <int, int>& m2(m);\nm[200] = 300;\ncout << m2.brojElemenata() << \" \"; \/\/ 2\ncout << m2[200] << \" \"; \/\/ 300\n\n\/\/ Ovdje se sigurno nece kreirati objekat m2[300] jer je m2 const\ncout << m2[300] << \" \"; \/\/ 0\ncout << m2.brojElemenata() << \" \"; \/\/ 2\nm[300] = 400;\ncout << m2[300] << \" \"; \/\/ 400\ncout << m2.brojElemenata(); \/\/ 3",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "2 300 0 2 400 3"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1775,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/ Test polimorfizma\nMapa<int,int>* m = new AVLStabloMapa<int,int>;\n(*m)[100] = 200;\n(*m)[50] = 100;\ncout << (*m)[100] << \" \" << m->brojElemenata(); \/\/ 200 2\nm->obrisi(100);\ncout << \" \" << m->brojElemenata(); \/\/ 1\nm->obrisi();\ncout << \" \" << m->brojElemenata(); \/\/ 0\n(*m)[25] = 300;\ncout << \" \" << (*m)[100]; \/\/ 0\ncout << \" \" << (*m)[50]; \/\/ 0\ncout << \" \" << (*m)[25]; \/\/ 300\ndelete m;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "200 2 1 0 0 0 300"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1776,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/ Test brisanja\nAVLStabloMapa <float, float> m;\nm[5] = 5;\nm[3] = 3;\nm[7] = 7;\nm[8] = 8;\nm[1] = 1;\nm[2] = 2;\nm[0.5] = 0.5;\nm[4] = 4;\nm[1.5] = 1.5;\nm[3.5] = 3.5;\nm[4.5] = 4.5;\n\n\/\/ Proba\ncout << std::setprecision(2) << m[4.5] << \" \";\n\/\/ Brisanje slucaj 1\nm.obrisi(8);\ncout << m[7] << \" \" << m[8] << \" \"; \n\/\/ Ovim smo ponovo dodali kljuc 8 u mapu\n\/\/ Brisanje slucaj 2\nm[8] = 8;\nm.obrisi(7);\ncout << m[5] << \" \" << m[8] << \" \" << m[7] << \" \";\n\/\/ Brisanje slucaj 3\nm.obrisi(3);\ncout << m[2] << \" \" << m[1.5] << \" \" << m[1] << \" \";\ncout << m[0.5] << \" \" << m[3] << \" \";\n\/\/ Brisanje korijena\nm.obrisi(5);\nm[3] = 3;\ncout << m[8] << \" \" << m[1.5] << \" \" << m[3];\ncout << \" \" << m[5] << \" \";\n\/\/ Da li je roditelj korektno azuriran?\nm.obrisi(7);\ncout << m[8] << \" \" << m[7];",
+            "global_above_main": "#include <iomanip>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "4.5 7 0 5 8 0 2 1.5 1 0.5 0 8 1.5 3 0 8 0"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1777,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/ Malo jaci test performansi AVLStabloMape gdje se vidi \n\/\/ da li je zaista O(log n)\nAVLStabloMapa <int, int> m;\nint vel(2000000);\nfor (int i(0); i<vel; i++)\n    m[rand()%(2*vel)-vel] = i;\nfor (int i(-vel); i<vel; i++)\n    m[i] = i;\nfor (int i(-vel); i<vel; i++) {\n    if (m[i] != i) { cout << i << \" NOT \"; break; }\n    m.obrisi(i);\n}\ncout << \"OK\";",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "OK"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1778,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/ Da li je \"AVLStabloMapa\" ustvari obicno binarno stablo?\nAVLStabloMapa <int, int> m;\nint vel(500000);\nint progress(1000);\nfor (int i(0); i<vel; i++) {\n    m[i] = i;\n    if (i==progress) { \n       cout<<\"Dodano \"<<i<<endl;\n       progress *= 2;\n    }\n}\n\/\/ Obicno bin. stablo ce uspjeti dodati oko 30000-70000 el. za 10 sekundi\n\/\/ Korektno AVL stablo ce zavrsiti kompletan test za <1 sekundu\n\nfor (int i(0); i>=-vel; i--)\n    m[i] = i;\nfor (int i(-vel); i<vel; i++)\n    if (m[i] != i) { cout << i << \" NOT OK\"; break; }\nfor (int i(-vel); i<vel; i++)\n    m.obrisi(i);\ncout << \"OK\";",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Dodano 1000\\nDodano 2000\\nDodano 4000\\nDodano 8000\\nDodano 16000\\nDodano 32000\\nDodano 64000\\nDodano 128000\\nDodano 256000\\nOK"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "true"
+        }
+    ]
+}

@@ -1,0 +1,144 @@
+{
+    "id": 1304,
+    "name": "Algoritmi i strukture podataka (2016\/2017), Pripremna Zadaca Za Vjezbu 4, zadatak 1",
+    "language": "C++",
+    "required_compiler": "g++",
+    "preferred_compiler": "g++",
+    "compiler_features": [
+
+    ],
+    "compiler_options": "-std=c++11 -O1 -Wall -Wuninitialized -Winit-self -Wfloat-equal -Wno-sign-compare -Werror=implicit-function-declaration -Werror=vla -pedantic -lm -pass-exit-codes",
+    "compiler_options_debug": "-std=c++11 -ggdb -lm -pass-exit-codes",
+    "compile": "true",
+    "run": "false",
+    "test": "true",
+    "debug": "true",
+    "profile": "true",
+    "test_specifications": [
+        {
+            "id": 1305,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Red<int> r;\nfor (int i(1); i<=5; i++)\n\tr.stavi(i);\nstd::cout << r.brojElemenata() << \" \" << r.celo() << \" \";\nr.brisi();\nfor (int i(1); i<=5; i++)\n\tr.stavi(i);\nstd::cout << r.brojElemenata() << \" \";\nfor (int i(1); i<=5; i++)\n\tstd::cout << r.skini() << \" \";\nstd::cout << r.brojElemenata() << \" \";\nfor (int i(1); i<=5; i++)\n\tr.stavi(i);\nstd::cout << r.brojElemenata() << \" \" << r.celo();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5 1 5 1 2 3 4 5 0 5 1"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1306,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\t\nint brel;\nRed<int> r;\nfor (int i(1); i<=5; i++)\n\tr.stavi(i);\n{\n        \/\/ Konstruktor kopije\n\tRed<int> r2(r);\n\tRed<int> r3;\n        \/\/ Operator dodjele\n\t(r3=r).brojElemenata();\n        \/\/ Destruktivna samododjela\n        (r=r).brojElemenata();\n\n\tr.skini();\n\tbrel = r2.brojElemenata();\n\tfor (int i(0); i<brel; i++)\n\t\tstd::cout << r2.skini() << \" \";\n\tbrel = r3.brojElemenata();\n\tfor (int i(0); i<brel; i++)\n\t\tstd::cout << r3.skini() << \" \";\n}\nbrel = r.brojElemenata();\nfor (int i(0); i<brel; i++)\n\tstd::cout << r.skini() << \" \";",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1 2 3 4 5 1 2 3 4 5 2 3 4 5"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1307,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/ Test performansi (sve metode trebaju biti O(1) )\nRed<int> r;\nfor (int i(0); i<100000; i++)\nr.stavi(i);\nstd::cout << r.celo() << std::endl;\nfor (int i(0); i<99999; i++)\nr.skini();\nstd::cout << r.celo();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "0\\n99999"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1308,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Red<int> r;\nfor (int i(1); i<=5; i++)\n    r.stavi(i);\n    try{\nfor (int i(0); i<=6;i++)\n    r.skini();\n    }\n    catch(...){\n        cout<<\"Izuzetak\";   \n    }",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Izuzetak"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1309,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Red<int> r;\nfor (int i(0); i<5; i++)\nr.stavi(i);\nstd::cout << r.celo()<<\" \";\nr.celo()++;\nstd::cout << r.celo();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "0 1"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        }
+    ]
+}

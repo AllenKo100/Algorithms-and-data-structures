@@ -1,0 +1,41 @@
+U nastavku slijedi nekoliko testova za metode klasa NizLista i JednostrukaLista: 
+TEST1:
+Tremutni broj elemenata, treba ispisati: 0, a nas ispis je: 0
+Trenutni element, treba ispisat: 10, a nas ispis je: 10
+Broj elemenata nakon dodavanja: 3, a nas ispis je: 3
+Trenutni elementi u listi su: 20 30 10, a nas ispis je: 20 30 10 
+TEST2:
+Ispis bi trebao biti: 1 2 3 4 5 6 7 8 9 10, a nas ispis je: 1 2 3 4 5 6 7 8 9 10 
+Ispis bi trebao biti: 1 2 3 4 5 6 7 8 9 10, a nas ispis nakon operatora dodjele je: 1 2 3 4 5 6 7 8 9 10 
+
+TEST3:
+Broj elemenata je: 10, a nas ispis je: 10
+Broj elemenata je: 9, a nas ispis je: 9
+Broj elemenata je: 6, a nas ispis je: 6
+Trenutni element je: 3, a nas ispis je: 3
+Trenutni element je: 7, a nas ispis je: 7
+
+TEST4:
+TACNO! Prvi element je trenutni tako da funkcija prethodni vraca false
+TACNO! Posljednji element je trenutni tako da funkcija prethodni vraca false
+
+TEST5:
+Trenutni broj elemenata, treba ispisati: 0, a nas ispis je: 0
+Trenutni element, treba ispisat: 10, a nas ispis je: 10
+Broj elemenata nakon dodavanja: 3, a nas ispis je: 3
+Trenutni elementi u listi su: 20 30 10, a nas ispis je: 20 30 10 
+TEST6:
+Ispis bi trebao biti: 1 2 3 4 5 6 7 8 9 10, a nas ispis je: 1 2 3 4 5 6 7 8 9 10 
+Ispis bi trebao biti: 1 2 3 4 5 6 7 8 9 10, a nas ispis nakon operatora dodjele je: 1 2 3 4 5 6 7 8 9 10 
+
+TEST7:
+Broj elemenata je: 6, a nas ispis je: 6
+Broj elemenata je: 5, a nas ispis je: 5
+Broj elemenata je: 2, a nas ispis je: 2
+Trenutni element je: 3, a nas ispis je: 3
+Trenutni element je: 3, a nas ispis je: 3
+
+TEST8:
+TACNO! Prvi element je trenutni tako da funkcija prethodni vraca false
+TACNO! Posljednji element je trenutni tako da funkcija prethodni vraca false
+

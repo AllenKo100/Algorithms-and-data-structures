@@ -1,0 +1,274 @@
+{
+    "buildhost_description": {
+        "id": "lab002c02",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n",
+        "compiler_version": "g++ (GCC) 6.2.0",
+        "debugger_version": "GNU gdb (GDB) 7.12",
+        "profiler_version": "valgrind-3.12.0"
+    },
+    "status": 4,
+    "compile_result": {
+        "status": 1,
+        "output": "main.cpp: In function ‘bool TestOperatorDodjele()’:\nmain.cpp:368:112: warning: ‘tmp’ may be used uninitialized in this function [-Wmaybe-uninitialized]\n     std::cout << \"Nakon primjene metode trenutni, trenutni element je 60, a nas ispis je \" << dlista2.trenutni() << std::endl;\n                                                                                                                ^\nmain.cpp: In function ‘bool TestKonstruktor()’:\nmain.cpp:383:112: warning: ‘tmp’ may be used uninitialized in this function [-Wmaybe-uninitialized]\n     std::cout << \"Nakon primjene metode trenutni, trenutni element je 10, a nas ispis je \" << dlista2.trenutni() << std::endl;\n                                                                                                                ^\nmain.cpp: In function ‘Tip dajMaksimum(const Lista<Tip>&) [with Tip = int]’:\nmain.cpp:68:13: warning: ‘tmp’ may be used uninitialized in this function [-Wmaybe-uninitialized]\n             tekuci=tmp;\n             ^~~~~~\nmain.cpp:53:24: note: ‘tmp’ was declared here\n             Cvor<Tip>* tmp;\n                        ^~~",
+        "parsed_output": [
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "368",
+                "col": "112",
+                "message": "'tmp' may be used uninitialized in this function",
+                "output": "/tmp/buildservice/bs_7176/main.cpp:368:112: warning: ‘tmp’ may be used uninitialized in this function [-Wmaybe-uninitialized]     std::cout << \"Nakon primjene metode trenutni, trenutni element je 60, a nas ispis je \" << dlista2.trenutni() << std::endl;                                                                                                                ^",
+                "code": "std::cout << \"Nakon primjene metode trenutni, trenutni element je 60, a nas ispis je \" << dlista2.trenutni() << std::endl;"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "383",
+                "col": "112",
+                "message": "'tmp' may be used uninitialized in this function",
+                "output": "/tmp/buildservice/bs_7176/main.cpp:383:112: warning: ‘tmp’ may be used uninitialized in this function [-Wmaybe-uninitialized]     std::cout << \"Nakon primjene metode trenutni, trenutni element je 10, a nas ispis je \" << dlista2.trenutni() << std::endl;                                                                                                                ^",
+                "code": "std::cout << \"Nakon primjene metode trenutni, trenutni element je 10, a nas ispis je \" << dlista2.trenutni() << std::endl;"
+            },
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "68",
+                "col": "13",
+                "message": "'tmp' may be used uninitialized in this function",
+                "output": "/tmp/buildservice/bs_7176/main.cpp:68:13: warning: ‘tmp’ may be used uninitialized in this function [-Wmaybe-uninitialized]             tekuci=tmp;             ^~~~~~",
+                "code": "tekuci=tmp;"
+            }
+        ]
+    },
+    "run_result": [],
+    "debug_result": [],
+    "profile_result": [],
+    "test_results": {
+        "1288": {
+            "status": 1,
+            "run_result": {
+                "output": "5 4",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1289": {
+            "status": 1,
+            "run_result": {
+                "output": "abc",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1290": {
+            "status": 1,
+            "run_result": {
+                "output": "1 5 4 3 2 6",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1291": {
+            "status": 1,
+            "run_result": {
+                "output": "2 3 4 5 1 ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1292": {
+            "status": 1,
+            "run_result": {
+                "output": "10000 0",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1293": {
+            "status": 1,
+            "run_result": {
+                "output": "5 0",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1294": {
+            "status": 1,
+            "run_result": {
+                "output": "5 4 5 4 4 4",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1295": {
+            "status": 1,
+            "run_result": {
+                "output": "1 2 4 5 4",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1296": {
+            "status": 1,
+            "run_result": {
+                "output": "5 1 2\n15 20\n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1297": {
+            "status": 1,
+            "run_result": {
+                "output": "OK",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1298": {
+            "status": 1,
+            "run_result": {
+                "output": "OK",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1299": {
+            "status": 1,
+            "run_result": {
+                "output": "99999",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1300": {
+            "status": 1,
+            "run_result": {
+                "output": "99",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1301": {
+            "status": 1,
+            "run_result": {
+                "output": "100000",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1302": {
+            "status": 1,
+            "run_result": {
+                "output": "500 100000 500",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1303": {
+            "status": 1,
+            "run_result": {
+                "output": "1 1 2 1 5 1 5 6 1 5 4 3 8 2 ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        }
+    },
+    "queue_items": 0,
+    "time": 1574014520
+}

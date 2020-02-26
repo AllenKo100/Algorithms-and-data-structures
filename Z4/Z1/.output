@@ -1,0 +1,4 @@
+Vrijeme potrebno za dodavanje 1000 elemenata u BSM je 896 ms.
+Vrijeme potrebno za dodavanje 1000 elemenata u AVL je 26 ms.
+Vrijeme potrebno za brisanje 1000 elemenata u BSM je 5 ms.
+Vrijeme potrebno za brisanje 1000 elemenata u AVL je 7 ms.

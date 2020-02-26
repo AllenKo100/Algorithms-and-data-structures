@@ -1,0 +1,16 @@
+Niz prije sortiranja: 
+5 4 3 2 1 
+Niz poslije sortiranja: 
+1 2 3 4 5 
+Gomila vectora a izgleda ovako: 
+942 333 904 23 111 153 
+Gomila nakon gomilaSort: 
+12 132 154 425 536 9999 
+Gomila prije sortiranja: 
+232323 101010 54312 1532 4367 876 674 32 980 24 4367 1 
+Gomila poslije sortiranja: 
+1 24 32 674 876 980 1532 4367 4367 54312 101010 232323 
+Gomila prije izbacivanja prvog: 
+16354 7098 980 468 3324 0 167 31 
+Gomila nakon izbacivanja prvog: 
+7098 3324 980 468 31 0 167 

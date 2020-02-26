@@ -1,0 +1,10 @@
+Broj elemenata reda je 10, a nas ispis je: 10
+Broj elemenata reda nakon brisanje je 0, a nas ispis je: 0
+Broj elemenata reda je 50, a nas ispis je: 50
+Broj elemenata reda je 49, a nas ispis je: 49
+Broj elemenata reda je 5, a nas ispis je: 5
+Element na celu reda je 5, a nas ispis je: 5
+Sljedeci element na celu reda je 6, a nas ispis je: 6
+Nakon skidanja elementa iz reda1, broj elemenata je 9, a nas ispis je: 9
+Nakon skidanja elementa iz reda2, broj elemenata je 8, a nas ispis je: 8
+Prosli su svi testovi!

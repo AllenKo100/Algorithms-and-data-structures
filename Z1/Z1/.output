@@ -1,0 +1,17 @@
+DvostrukaLista TEST 1
+Trenutni broj elemenata, treba ispisati: 0, a nas ispis je: 0
+Trenutni element, treba ispisati: 1, a nas ispis je: 1
+Broj elemenata nakon dodavanja: 3, a nas ispis je: 3
+DvostrukaLista TEST dajMaksimum
+Maksimalni element u listi je 95, a nas ispis je: 95
+Testiranje metode obrisi
+Broj elemenata liste je 100, nas ispis je: 100
+Nakon brisanja elementa liste, broj elemenata je 99, a nas ispis je: 99
+Element na indeksu 0 je 1, a nas ispis je: 1
+Element na indeksu 99 je 100, a nas ispis je: 100
+Nakon primjene metode pocetak, trenutni element je 1, a nas ispis je 1
+Nakon primjene metode pocetak, trenutni element je 50, a nas ispis je 50
+Nakon primjene metode trenutni, trenutni element je 20, a nas ispis je 20
+Nakon primjene metode trenutni, trenutni element je 60, a nas ispis je 60
+Nakon primjene metode trenutni, trenutni element je 10, a nas ispis je 10
+Prosli su svi testovi!

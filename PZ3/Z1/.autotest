@@ -1,0 +1,144 @@
+{
+    "id": 1275,
+    "name": "Algoritmi i strukture podataka (2016\/2017), Pripremna Zadaca Za Tutorijal 2, zadatak 1",
+    "language": "C++",
+    "required_compiler": "g++",
+    "preferred_compiler": "g++",
+    "compiler_features": [
+
+    ],
+    "compiler_options": "-std=c++11 -O1 -Wall -Wuninitialized -Winit-self -Wfloat-equal -Wno-sign-compare -Werror=implicit-function-declaration -Werror=vla -pedantic -lm -pass-exit-codes",
+    "compiler_options_debug": "-std=c++11 -ggdb -lm -pass-exit-codes",
+    "compile": "true",
+    "run": "false",
+    "test": "true",
+    "debug": "true",
+    "profile": "true",
+    "test_specifications": [
+        {
+            "id": 1276,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Stek<int> s;\nfor (int i(1); i<=5; i++)\n\ts.stavi(i);\nstd::cout << s.brojElemenata() << \" \" << s.vrh() << \" \";\ns.brisi();\nfor (int i(1); i<=5; i++)\n\ts.stavi(i);\nstd::cout << s.brojElemenata() << \" \";\nfor (int i(1); i<=5; i++)\n\tstd::cout << s.skini() << \" \";\nstd::cout << s.brojElemenata() << \" \";\nfor (int i(1); i<=5; i++)\n\ts.stavi(i);\nstd::cout << s.brojElemenata() << \" \" << s.vrh();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5 5 5 5 4 3 2 1 0 5 5"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1283,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "int brel;\nStek<int> s;\nfor (int i(1); i<=5; i++)\n\ts.stavi(i);\n{\n        \/\/ Konstruktor kopije\n\tStek<int> s2(s);\n\tStek<int> s3;\n        \/\/ Operator dodjele\n\t(s3=s).brojElemenata();\n        \/\/ Destruktivna samododjela\n        (s=s).brojElemenata();\n\n\ts.skini();\n\tbrel = s2.brojElemenata();\n\tfor (int i(0); i<brel; i++)\n\t\tstd::cout << s2.skini() << \" \";\n\tbrel = s3.brojElemenata();\n\tfor (int i(0); i<brel; i++)\n\t\tstd::cout << s3.skini() << \" \";\n}\nbrel = s.brojElemenata();\nfor (int i(0); i<brel; i++)\n\tstd::cout << s.skini() << \" \";",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5 4 3 2 1 5 4 3 2 1 4 3 2 1"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1284,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/ Test performansi (sve metode trebaju biti O(1) )\nStek<int> s;\nfor (int i(0); i<100000; i++)\ns.stavi(i);\nstd::cout << s.vrh() << std::endl;\nfor (int i(0); i<99999; i++)\ns.skini();\nstd::cout << s.vrh();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "99999\\n0"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1285,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    Stek<int> s;\nfor (int i(1); i<=5; i++)\n\ts.stavi(i);\n\ttry{\nfor (int i(0); i<=6;i++)\n    s.skini();\n\t}\n\tcatch(...){\n\t    cout<<\"Izuzetak\";   \n\t}",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Izuzetak"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1286,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Stek<int> s;\nfor (int i(0); i<5; i++)\ns.stavi(i);\nstd::cout << s.vrh()<<\" \";\ns.vrh()++;\nstd::cout << s.vrh();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "4 5"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        }
+    ]
+}

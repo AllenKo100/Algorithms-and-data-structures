@@ -1,0 +1,15 @@
+==19913== Memcheck, a memory error detector
+==19913== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==19913== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==19913== Command: /rhome/a/akovacevic4/workspace/ASP/Z5/Z1/.runme
+==19913== Parent PID: 19886
+==19913== 
+==19913== 
+==19913== HEAP SUMMARY:
+==19913==     in use at exit: 0 bytes in 0 blocks
+==19913==   total heap usage: 39 allocs, 39 frees, 82,144 bytes allocated
+==19913== 
+==19913== All heap blocks were freed -- no leaks are possible
+==19913== 
+==19913== For counts of detected and suppressed errors, rerun with: -v
+==19913== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

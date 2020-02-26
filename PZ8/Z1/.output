@@ -1,0 +1,6 @@
+Rezultati mjerenja vremena izvrsenja opercija dodavanja kod NizMapa i BSM: 
+Vrijeme potrebno za dodavanje 10000 elemenata u NizMapu je 971 milisekundi.
+Vrijeme potrebno za dodavanje 10000 elemenata u BSM je 958 milisekundi.
+Rezultati mjerenja vremena izvrsenja operacija pristupa elementima kod NizMapa i BSM: 
+Vrijeme potrebno za pristup 10000 elemenata u NizMapi je 956 milisekundi.
+Vrijeme potrebno za pristup 10000 elemenata u BSM je 29 milisekundi.

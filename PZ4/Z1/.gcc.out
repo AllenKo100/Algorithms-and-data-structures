@@ -1,0 +1,5 @@
+/rhome/a/akovacevic4/workspace/ASP/PZ4/Z1/main.cpp: In instantiation of ‘JednostrukaLista<Tip>::JednostrukaLista(const JednostrukaLista<Tip>&) [with Tip = int]’:
+/rhome/a/akovacevic4/workspace/ASP/PZ4/Z1/main.cpp:251:7:   required from here
+/rhome/a/akovacevic4/workspace/ASP/PZ4/Z1/main.cpp:47:41: warning: variable ‘temp’ set but not used [-Wunused-but-set-variable]
+             Cvor<Tip>* klizni=l.lista, *temp;
+                                         ^~~~

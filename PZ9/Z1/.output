@@ -1,0 +1,11 @@
+Slijede rezultati testiranja performansi NizMapa, BinStabloMapa, te HashMapa:
+Vrijeme potrebno za dodavanje 10000 elemenata u NizMapa je 10 milisekundi.
+Vrijeme potrebno za dodavanje 10000 elemenata u BinStabloMapa je 6 milisekundi.
+Vrijeme potrebno za dodavanje 10000 elemenata u HashMapa je 14 milisekundi.
+Vrijeme potrebno za pristup svim clanovima u NizMapa je 8 milisekundi.
+Vrijeme potrebno za pristup svim clanovima u BinStabloMapa je 4 milisekundi.
+Vrijeme potrebno za pristup svim clanovima u HashMapa je 10 milisekundi.
+Vrijeme potrebno za brisanje 5000 clanova u NizMapa je 850 milisekundi.
+Vrijeme potrebno za brisanje 5000 clanova u BinStabloMapa je 5 milisekundi.
+Vrijeme potrebno za brisanje 5000 clanova u HashMapa je 453 milisekundi.
+To bi bili rezultati za sve mape urađene do sad, te sada možemo uporediti performanse, a komentar se nalazi na kraju koda

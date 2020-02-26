@@ -1,0 +1,269 @@
+{
+    "id": 1444,
+    "name": "Algoritmi i strukture podataka (2016\/2017), Zadaca 2, zadatak 2",
+    "language": "C++",
+    "required_compiler": "g++",
+    "preferred_compiler": "g++",
+    "compiler_features": [
+
+    ],
+    "compiler_options": "-std=c++11 -O1 -Wall -Wuninitialized -Winit-self -Wfloat-equal -Wno-sign-compare -Werror=implicit-function-declaration -Werror=vla -pedantic -lm -pass-exit-codes",
+    "compiler_options_debug": "-std=c++11 -ggdb -lm -pass-exit-codes",
+    "compile": "true",
+    "run": "false",
+    "test": "true",
+    "debug": "true",
+    "profile": "true",
+    "test_specifications": [
+        {
+            "id": 1445,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Stek<vector<int> > s;\nvector<int> a;\nfor (int i(1); i<6; i++)\na.push_back(i);\nvector<int> b;\nb.push_back(6);b.push_back(8);\nvector<int> c;\nc.push_back(9);c.push_back(10);c.push_back(130);\nvector<int> d;\nd.push_back(157);d.push_back(226);d.push_back(3424);\ns.stavi(a);\ns.stavi(b);\ns.stavi(c);\ns.stavi(d);\npretraga(s,10);",
+            "global_above_main": "#include <vector>\nusing namespace std;\n",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1 2"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1446,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Stek<vector<int> > s;\nvector<int> a;\nfor (int i(1); i<6; i++)\na.push_back(i);\nvector<int> b;\nb.push_back(6);b.push_back(8);\nvector<int> c;\nc.push_back(9);c.push_back(10);c.push_back(130);\nvector<int> d;\nd.push_back(157);d.push_back(226);d.push_back(3424);\ns.stavi(a);\ns.stavi(b);\ns.stavi(c);\ns.stavi(d);\npretraga(s,325435);",
+            "global_above_main": "using namespace std;\n#include <vector>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Nema elementa"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1447,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Stek<vector<int> > s;\nvector<int> a;\nfor (int i(1); i<6; i++)\na.push_back(i);\nvector<int> b;\nb.push_back(6);b.push_back(8);\nvector<int> c;\nc.push_back(9);c.push_back(10);c.push_back(130);\nvector<int> d;\nd.push_back(157);d.push_back(226);d.push_back(3424);\ns.stavi(a);\ns.stavi(b);\ns.stavi(c);\ns.stavi(d);\npretraga(s,11);",
+            "global_above_main": "using namespace std;\n#include <vector>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Nema elementa"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1448,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Stek<vector<int> > s;\nvector<int> a;\nfor (int i(10); i<60; i++)\na.push_back(i);\nvector<int> b;\nb.push_back(6);b.push_back(8);\nvector<int> c;\nc.push_back(9);c.push_back(10);c.push_back(130);\nvector<int> d;\nd.push_back(157);d.push_back(226);d.push_back(3424);\ns.stavi(a);\ns.stavi(b);\ns.stavi(c);\ns.stavi(d);\npretraga(s,1);",
+            "global_above_main": "using namespace std;\n#include <vector>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Nema elementa"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1449,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Stek<vector<int> > s;\nvector<int> a;\nfor (int i(10); i<1000000; i++)\na.push_back(i);\ns.stavi(a);\npretraga(s,999999);",
+            "global_above_main": "using namespace std;\n#include <vector>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "999989 0"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1450,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Stek<vector<int> > s;\npretraga(s,546);",
+            "global_above_main": "using namespace std;\n#include <vector>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Nema elementa"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1451,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Stek<vector<int> > s;\nvector<int> a;\nfor (int i(0); i<5; i++)\na.push_back(i);\nvector<int> b;\nvector<int> c;\nvector<int> d;\nfor (int i(5); i<105; i++)\nb.push_back(i);\ns.stavi(a);\ns.stavi(b);\ns.stavi(c);\ns.stavi(d);\npretraga(s,2);",
+            "global_above_main": "using namespace std;\n#include <vector>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "2 0"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1452,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Stek<vector<int> > s;\nvector<int> a;\nfor (int i(0); i<5; i++)\na.push_back(i);\nvector<int> b;\nvector<int> c;\nvector<int> d;\nfor (int i(5); i<7; i++)\nb.push_back(i);\ns.stavi(a);\ns.stavi(b);\nc.push_back(8);\ns.stavi(c);\nd.push_back(9);\ns.stavi(d);\npretraga(s,2);\ncout<<\" \";\nwhile(s.brojElemenata()!=0){\n    vector<int> k = s.skini();\n    for(int i(0);i<k.size();i++){\n        cout<<k[i]<<\" \";\n    }\n}",
+            "global_above_main": "using namespace std;\n#include <vector>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "2 0 9 8 5 6 0 1 2 3 4 "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1453,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Stek<vector<int> > s;\nvector<int> a;\nfor (int i(10); i<10000; i++)\na.push_back(i);\nvector<int> b;\nb.push_back(10006);b.push_back(10008);\nvector<int> c;\nc.push_back(10009);c.push_back(10010);c.push_back(10130);\nvector<int> d;\nd.push_back(10157);d.push_back(10226);d.push_back(13424);\ns.stavi(a);\ns.stavi(b);\ns.stavi(c);\ns.stavi(d);\npretraga(s,254);",
+            "global_above_main": "using namespace std;\n#include <vector>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "244 0"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1454,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Stek<vector<int> > s;\nvector<int> a;\nfor (int i(10); i<10000; i++)\na.push_back(i);\nvector<int> b;\nb.push_back(10006);b.push_back(10008);\nvector<int> c;\nc.push_back(10009);c.push_back(10010);c.push_back(10130);\nvector<int> d;\nd.push_back(10157);d.push_back(10226);d.push_back(13424);\ns.stavi(a);\ns.stavi(b);\ns.stavi(c);\ns.stavi(d);\npretraga(s,9999);",
+            "global_above_main": "using namespace std;\n#include <vector>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "9989 0"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+==9968== Memcheck, a memory error detector
+==9968== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==9968== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==9968== Command: /rhome/a/akovacevic4/workspace/ASP/PZ2/Z1/.runme
+==9968== Parent PID: 9947
+==9968== 
+==9968== Invalid read of size 8
+==9968==    at 0x10AFA1: NizLista<int>::obrisi() (main.cpp:128)
+==9968==    by 0x109925: Test3() (main.cpp:480)
+==9968==    by 0x10A414: main (main.cpp:593)
+==9968==  Address 0x5d805b0 is 0 bytes after a block of size 80 alloc'd
+==9968==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==9968==    by 0x10A58A: NizLista<int>::NizLista() (main.cpp:36)
+==9968==    by 0x1098AB: Test3() (main.cpp:475)
+==9968==    by 0x10A414: main (main.cpp:593)
+==9968== 
+==9968== 
+==9968== HEAP SUMMARY:
+==9968==     in use at exit: 0 bytes in 0 blocks
+==9968==   total heap usage: 88 allocs, 88 frees, 73,900 bytes allocated
+==9968== 
+==9968== All heap blocks were freed -- no leaks are possible
+==9968== 
+==9968== For counts of detected and suppressed errors, rerun with: -v
+==9968== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

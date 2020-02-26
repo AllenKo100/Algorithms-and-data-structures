@@ -1,0 +1,269 @@
+{
+    "id": 1615,
+    "name": "Algoritmi i strukture podataka (2016\/2017), Zadaca 3, zadatak 1",
+    "language": "C++",
+    "required_compiler": "g++",
+    "preferred_compiler": "g++",
+    "compiler_features": [
+
+    ],
+    "compiler_options": "-std=c++11 -O1 -Wall -Wuninitialized -Winit-self -Wfloat-equal -Wno-sign-compare -Werror=implicit-function-declaration -Werror=vla -pedantic -lm -pass-exit-codes",
+    "compiler_options_debug": "-std=c++11 -ggdb -lm -pass-exit-codes",
+    "compile": "true",
+    "run": "false",
+    "test": "true",
+    "debug": "true",
+    "profile": "true",
+    "test_specifications": [
+        {
+            "id": 1616,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    vector<int> a;\n    a.push_back(545);\n    a.push_back(1545);\n    a.push_back(4536);\n    a.push_back(124121);\n    a.push_back(1);\n    a.push_back(95468);\n    radixSort(a);\n    for(int i(0);i<a.size();i++){\n        cout<<a[i]<<\" \";\n    }",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1 545 1545 4536 95468 124121 "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1617,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    vector<int> a;\n    vector<int> b;\n    a.push_back(545);\n    a.push_back(1545);\n    a.push_back(4536);\n    a.push_back(124121);\n    a.push_back(1);\n    a.push_back(95468);\n    for(int i=0;i<10000;i+=13){\n        a.push_back(i);\n    }\n    for(int i=0;i<a.size();i++){\n        b.push_back(a[i]);\n    }\n    radixSort(a);\n    sort(b.begin(),b.end());\n    bool testOk = true;\n    for(int i(0);i<a.size();i++){\n        if(a[i]!=b[i]) testOk = false;;\n    }\n    if(testOk) cout<<\"OK\";",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "OK"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1618,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    vector<int> a;\n    a.push_back(545);\n    a.push_back(1545);\n    a.push_back(4536);\n    a.push_back(124121);\n    a.push_back(1);\n    a.push_back(95468);\n    for(int i=0;i<200000;i++){\n        a.push_back(i);\n    }\n    radixSort(a);\n    cout<<\"OK\";",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "OK"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1619,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    vector<int> a;\n    a.push_back(545);\n    a.push_back(1545);\n    a.push_back(4536);\n    a.push_back(124121);\n    a.push_back(1);\n    a.push_back(95468);\n    stvoriGomilu(a);\n    for(int i(0);i<a.size();i++){\n        cout<<a[i]<<\" \";\n    }",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "124121 1545 95468 545 1 4536 "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1622,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    vector<int> a;\n    a.push_back(546);\n    a.push_back(1);\n    a.push_back(31);\n    a.push_back(1001);\n    a.push_back(104351);\n    a.push_back(7);\n    a.push_back(6);\n    a.push_back(60045);\n    gomilaSort(a);\n    for(int i(0);i<a.size();i++){\n        cout<<a[i]<<\" \";\n    }",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1 6 7 31 546 1001 60045 104351 "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1623,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "   vector<int> a;\n    vector<int> b;\n    a.push_back(545);\n    a.push_back(1545);\n    a.push_back(4536);\n    a.push_back(124121);\n    a.push_back(1);\n    a.push_back(95468);\n    for(int i=0;i<10000;i+=13){\n        a.push_back(i);\n    }\n    for(int i=0;i<a.size();i++){\n        b.push_back(a[i]);\n    }\n    radixSort(a);\n    gomilaSort(b);\n    bool testOk = true;\n    for(int i(0);i<a.size();i++){\n        if(a[i]!=b[i]) testOk = false;;\n    }\n    if(testOk) cout<<\"OK\";",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "OK"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1624,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    vector<int> a;\n    a.push_back(545);\n    a.push_back(1545);\n    a.push_back(4536);\n    a.push_back(124121);\n    a.push_back(1);\n    a.push_back(95468);\n    int velicina = a.size();\n    stvoriGomilu(a);\n    umetniUGomilu(a,100000,velicina);   \n    umetniUGomilu(a,3,velicina);   \n    umetniUGomilu(a,1,velicina);  \n    umetniUGomilu(a,100,velicina); \n    umetniUGomilu(a,200,velicina);  \n    for(int i(0);i<a.size();i++){\n        cout<<a[i]<<\" \";\n    }\n    gomilaSort(a);\n    for(int i(0);i<a.size();i++){\n        cout<<a[i]<<\" \";\n    }",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "124121 1545 100000 545 200 4536 95468 3 1 1 100 1 1 3 100 200 545 1545 4536 95468 100000 124121 "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1625,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    vector<int> a;\n    a.push_back(545465);\n    a.push_back(1556445);\n    a.push_back(454636);\n    a.push_back(1254121);\n    a.push_back(15665656);\n    a.push_back(95468);\n    int velicina = a.size();\n    stvoriGomilu(a);\n    umetniUGomilu(a,100000,velicina);   \n    umetniUGomilu(a,3,velicina);   \n    umetniUGomilu(a,1,velicina);  \n    umetniUGomilu(a,100,velicina); \n    umetniUGomilu(a,200,velicina);  \n    izbaciPrvi(a,velicina);\n    for(int i(0);i<a.size();i++){\n        cout<<a[i]<<\" \";\n    }",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1556445 1254121 454636 200 545465 95468 100000 3 1 100 15665656 "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1626,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    vector<int> a;\n    int velicina = 0;\n    umetniUGomilu(a,546,velicina);\n    umetniUGomilu(a,435435,velicina);\n    umetniUGomilu(a,12,velicina);\n    umetniUGomilu(a,546,velicina);\n    umetniUGomilu(a,675767,velicina);\n    umetniUGomilu(a,33,velicina);\n    umetniUGomilu(a,555,velicina);\n    umetniUGomilu(a,1,velicina);\n    for(int i(0);i<a.size();i++){\n        cout<<a[i]<<\" \";\n    }\n    radixSort(a);\n    for(int i(0);i<a.size();i++){\n        cout<<a[i]<<\" \";\n    }    ",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "675767 435435 555 546 546 12 33 1 1 12 33 546 546 555 435435 675767 "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1627,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    vector<int> a;\n    int velicina = 0;\n    umetniUGomilu(a,546,velicina);\n    umetniUGomilu(a,435435,velicina);\n    umetniUGomilu(a,12,velicina);\n    umetniUGomilu(a,546,velicina);\n    umetniUGomilu(a,675767,velicina);\n    umetniUGomilu(a,33,velicina);\n    umetniUGomilu(a,555,velicina);\n    umetniUGomilu(a,1,velicina);\n    izbaciPrvi(a,velicina);\n    izbaciPrvi(a,velicina);\n    izbaciPrvi(a,velicina);\n    izbaciPrvi(a,velicina);\n    izbaciPrvi(a,velicina);\n    izbaciPrvi(a,velicina);\n    izbaciPrvi(a,velicina);\n    izbaciPrvi(a,velicina);\n    for(int i(0);i<a.size();i++){\n        cout<<a[i]<<velicina;\n    }    ",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1012033054605460555043543506757670"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        }
+    ]
+}

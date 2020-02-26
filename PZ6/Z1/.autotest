@@ -1,0 +1,244 @@
+{
+    "id": 1585,
+    "name": "Algoritmi i strukture podataka (2016\/2017), Pripremna Zadaca Za Vjezbu 6, zadatak 1",
+    "language": "C++",
+    "required_compiler": "g++",
+    "preferred_compiler": "g++",
+    "compiler_features": [
+
+    ],
+    "compiler_options": "-std=c++11 -O1 -Wall -Wuninitialized -Winit-self -Wfloat-equal -Wno-sign-compare -Werror=implicit-function-declaration -Werror=vla -pedantic -lm -pass-exit-codes",
+    "compiler_options_debug": "-std=c++11 -ggdb -lm -pass-exit-codes",
+    "compile": "true",
+    "run": "false",
+    "test": "true",
+    "debug": "true",
+    "profile": "true",
+    "test_specifications": [
+        {
+            "id": 1586,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "int niz[5] = {3, 2, 8, 1, 5};\nbubble_sort(niz, 5);\nfor (int i(0); i<5; i++)\n    cout << niz[i] << \" \";",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1 2 3 5 8"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1587,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "int niz[5] = {3, 2, 8, 1, 5};\nselection_sort(niz, 5);\nfor (int i(0); i<5; i++)\n    cout << niz[i] << \" \";",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1 2 3 5 8"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1588,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "int niz[5] = {3, 2, 8, 1, 5};\nquick_sort(niz, 5);\nfor (int i(0); i<5; i++)\n    cout << niz[i] << \" \";",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1 2 3 5 8"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1589,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "int niz[5] = {3, 2, 8, 1, 5};\nmerge_sort(niz, 5);\nfor (int i(0); i<5; i++)\n    cout << niz[i] << \" \";",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1 2 3 5 8"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1590,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "int* niz;\nint vel = 0;\ngenerisi(\"autotest.txt\", 3000000);\nucitaj(\"autotest.txt\", niz, vel);\nmerge_sort(niz, vel);\nfor(int i(0); i<vel-1; i++) \n    if(niz[i] > niz[i+1]) {\n        cout << \"NOT \";\n        break;\n    }\ncout << \"OK\";\ndelete[] niz;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "OK"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1591,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "int vel(10000000);\nint* niz = new int[vel];\nfor (int i(0); i<vel; i++)\n\tniz[i] = rand();\nquick_sort(niz, vel);\nfor(int i(0); i<vel-1; i++) \n\tif(niz[i] > niz[i+1]) {\n\t\tcout << \"NOT \";\n\t\tbreak;\n\t}\ncout << \"OK\";\ndelete[] niz;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "OK"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1592,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "int* niz;\nint vel = 0;\ngenerisi(\"autotest.txt\", 3000000);\nucitaj(\"autotest.txt\", niz, vel);\nmerge_sort(niz, vel);\nfor(int i(0); i<vel-1; i++) \n    if(niz[i] > niz[i+1]) {\n        cout << \"NOT \";\n        break;\n    }\ncout << \"OK\";\ndelete[] niz;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "OK"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1593,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "int vel(10000000);\nint* niz = new int[vel];\nfor (int i(0); i<vel; i++)\n\tniz[i] = rand();\nquick_sort(niz, vel);\nfor(int i(0); i<vel-1; i++) \n\tif(niz[i] > niz[i+1]) {\n\t\tcout << \"Greska: i=\"<<i<<\" \"<<niz[i]<<\">\"<<niz[i+1]<<endl;\n\t\tbreak;\n\t}\ncout << \"OK\";\ndelete[] niz;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "OK"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1594,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/ Testovi da li funkcije rade sa tipom razlicitim od int\nstd::string niz[5] = {\"ddd\", \"abc\", \"abc\", \"zzz\", \"aaa\"};\nbubble_sort(niz, 5);\nfor (int i(0); i<5; i++)\n    cout << niz[i] << \" \";\ncout << endl;\n\nstd::string niz2[5] = {\"ddd\", \"abc\", \"abc\", \"zzz\", \"aaa\"};\nselection_sort(niz2, 5);\nfor (int i(0); i<5; i++)\n    cout << niz2[i] << \" \";\ncout << endl;\n\nstd::string niz3[5] = {\"ddd\", \"abc\", \"abc\", \"zzz\", \"aaa\"};\nquick_sort(niz3, 5);\nfor (int i(0); i<5; i++)\n    cout << niz3[i] << \" \";\ncout << endl;\n\nstd::string niz4[5] = {\"ddd\", \"abc\", \"abc\", \"zzz\", \"aaa\"};\nmerge_sort(niz4, 5);\nfor (int i(0); i<5; i++)\n    cout << niz4[i] << \" \";",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "aaa abc abc ddd zzz \\naaa abc abc ddd zzz \\naaa abc abc ddd zzz \\naaa abc abc ddd zzz"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        }
+    ]
+}

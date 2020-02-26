@@ -1,0 +1,419 @@
+{
+    "id": 1287,
+    "name": "Algoritmi i strukture podataka (2016\/2017), Zadaca 1, zadatak 1",
+    "language": "C++",
+    "required_compiler": "g++",
+    "preferred_compiler": "g++",
+    "compiler_features": [
+
+    ],
+    "compiler_options": "-std=c++11 -O1 -Wall -Wuninitialized -Winit-self -Wfloat-equal -Wno-sign-compare -Werror=implicit-function-declaration -Werror=vla -pedantic -lm -pass-exit-codes",
+    "compiler_options_debug": "-std=c++11 -ggdb -lm -pass-exit-codes",
+    "compile": "true",
+    "run": "false",
+    "test": "true",
+    "debug": "true",
+    "profile": "true",
+    "test_specifications": [
+        {
+            "id": 1288,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Lista<int>* l;\nl = new DvostrukaLista<int>;\nfor (int i(0); i<40000; i++)\n    l->dodajIspred(5);\nl->pocetak();\nl->dodajIspred(4);\nstd::cout << l->trenutni() << \" \";\nl->prethodni();\nstd::cout << l->trenutni();\ndelete l;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5 4"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1289,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Lista<std::string>* l;\nl = new DvostrukaLista<std::string>;\nl->dodajIza(\"abc\");\nstd::string s = l->trenutni();\t\nstd::cout << s;\ndelete l;",
+            "global_above_main": "#include <string>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "abc"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1290,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Lista<int>* l;\nl = new DvostrukaLista<int>;\nfor (int i(1); i<=5; i++)\n\tl->dodajIza(i);\ndo {\n\tstd::cout << l->trenutni() << \" \";\n} while(l->sljedeci());\nl->dodajIza(6);\nl->sljedeci();\nstd::cout << l->trenutni();\ndelete l;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1 5 4 3 2 6"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1291,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Lista<int>* l;\nl = new DvostrukaLista<int>;\nfor (int i(1); i<=5; i++)\n\tl->dodajIspred(i);\nfor (int i(0); i<5; i++)\n\tstd::cout << (*l)[i] << \" \";\ndelete l;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "2 3 4 5 1"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1292,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "DvostrukaLista<int> lista;\nfor (int i(1); i<=10000; i++)\n\tlista.dodajIspred(i);\nstd::cout << lista.brojElemenata() << \" \";\nfor (int i(1); i<=10000; i++)\n\tlista.obrisi();\nstd::cout << lista.brojElemenata();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "10000 0"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1293,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "DvostrukaLista<int> lista;\nfor (int i(1); i<=5; i++)\n\tlista.dodajIza(i);\nstd::cout << lista.brojElemenata() << \" \";\nfor (int i(1); i<=5; i++)\n\tlista.obrisi();\nstd::cout << lista.brojElemenata();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5 0"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1294,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "DvostrukaLista<int> lista;\nfor (int i(1); i<=5; i++)\n\tlista.dodajIspred(i);\n{\n    \/\/ Konstruktor kopije\n    DvostrukaLista<int> lista2(lista);\n    DvostrukaLista<int> lista3;\n    \/\/ Operator dodjele\n    (lista3=lista).brojElemenata();\n    \/\/ Destruktivna samododjela\n    (lista=lista).brojElemenata();\n\n    lista.obrisi();\n    std::cout << lista2.brojElemenata() << \" \" << lista2[2];\n    std::cout << \" \" << lista3.brojElemenata() << \" \" << lista3[2] << \" \";\n}\nstd::cout << lista.brojElemenata() << \" \" << lista[2];",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5 4 5 4 4 4"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1295,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "DvostrukaLista<int> n;\nfor (int i(1); i<=5; i++) {\n\tn.dodajIza(i);\n\tn.sljedeci();\n}\nn.pocetak();\nn.sljedeci();\nn.sljedeci();\nn.obrisi();\nfor (int i(0); i<n.brojElemenata(); i++)\n\tstd::cout << n[i] << \" \";\nstd::cout << n.trenutni();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1 2 4 5 4"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1296,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "DvostrukaLista<int> lista;\nfor (int i(1); i<=5; i++)\n\tlista.dodajIspred(i);\nconst DvostrukaLista<int>& konst(lista);\nstd::cout << konst.brojElemenata() << \" \" << konst.trenutni();\nstd::cout << \" \" << konst[0] << std::endl;\nlista.trenutni() = 15;\nlista[0] = 20;\nstd::cout << konst.trenutni() << \" \" << konst[0] << std::endl;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5 1 2\\n15 20"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1297,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/ Test performansi metoda pocetak() i kraj()\nLista<int>* l;\nl = new DvostrukaLista<int>;\nfor (int i(0); i<40000; i++)\n    l->dodajIspred(5);\nfor (int i(0); i<100000; i++) {\n    l->pocetak();\n    l->kraj();\n}\ndelete l;\nstd::cout << \"OK\";",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "OK"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1298,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/ Test performansi metoda pocetak() i kraj()\nLista<int>* l;\nl = new DvostrukaLista<int>;\nfor (int i(0); i<40000; i++)\n    l->dodajIspred(5);\nfor (int i(0); i<100000; i++) {\n    l->pocetak();\n    l->kraj();\n}\ndelete l;\nstd::cout << \"OK\";",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "OK"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1299,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Lista<int>* l;\nl = new DvostrukaLista<int>;\nfor (int i(0); i<100000; i++)\n    l->dodajIspred(i);\nstd::cout <<dajMaksimum(*l);\ndelete l;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "99999"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1300,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Lista<int>* l;\nl = new DvostrukaLista<int>;\nfor (int i(0); i<100; i++)\n    l->dodajIspred(i);\nstd::cout <<dajMaksimum(*l);\ndelete l;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "99"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1301,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "DvostrukaLista<int> l;\nfor (int i(0); i<=100000; i++)\n    l.dodajIspred(i);\nstd::cout <<dajMaksimum(l);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "100000"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1302,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "DvostrukaLista<int> l;\nfor (int i(0); i<=100000; i++){\n    l.dodajIza(i);\n    l.sljedeci();\n}\nl.pocetak();\nfor (int i(0); i<500; i++)\n    l.sljedeci();\nstd::cout <<l.trenutni()<<\" \";\nstd::cout <<dajMaksimum(l)<<\" \";\nstd::cout <<l.trenutni();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "500 100000 500"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1303,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "DvostrukaLista<int> l;\n    l.dodajIspred(1);\n    cout<<l.trenutni()<<\" \";\n    l.obrisi();\n    l.dodajIza(1);\n    l.dodajIza(2);\n    l.dodajIza(8);\n    cout<<l.trenutni()<<\" \";\n    l.dodajIza(3);\n    l.dodajIza(4);\n    l.dodajIza(5);\n    l.pocetak();\n    l.kraj();\n    cout<<l.trenutni()<<\" \";\n    l.pocetak();\n    cout<<l.trenutni()<<\" \";\n    l.sljedeci();\n    cout<<l.trenutni()<<\" \";\n    l.prethodni();\n    cout<<l.trenutni()<<\" \";\n    cout<<l[1]<<\" \";\n    cout<<l.brojElemenata()<<\" \";\n    l.pocetak();\n    for(int i=0;i<l.brojElemenata();i++){\n        cout<<l.trenutni()<<\" \";\n        l.sljedeci();\n    }",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1 1 2 1 5 1 5 6 1 5 4 3 8 2"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        }
+    ]
+}

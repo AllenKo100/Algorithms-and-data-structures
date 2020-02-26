@@ -1,0 +1,15 @@
+==25011== Memcheck, a memory error detector
+==25011== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==25011== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==25011== Command: /rhome/a/akovacevic4/workspace/ASP/PZ8/Z1/.runme
+==25011== Parent PID: 25004
+==25011== 
+==25011== 
+==25011== HEAP SUMMARY:
+==25011==     in use at exit: 0 bytes in 0 blocks
+==25011==   total heap usage: 6,320 allocs, 6,320 frees, 506,876 bytes allocated
+==25011== 
+==25011== All heap blocks were freed -- no leaks are possible
+==25011== 
+==25011== For counts of detected and suppressed errors, rerun with: -v
+==25011== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

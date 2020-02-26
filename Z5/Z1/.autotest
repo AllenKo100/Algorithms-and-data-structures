@@ -1,0 +1,497 @@
+{
+    "id": 1906,
+    "name": "Algoritmi i strukture podataka (2016\/2017), Zadaca 5, zadatak 1",
+    "language": "C++",
+    "required_compiler": "g++",
+    "preferred_compiler": "g++",
+    "compiler_features": [
+
+    ],
+    "compiler_options": "-std=c++11 -O1 -Wall -Wuninitialized -Winit-self -Wfloat-equal -Wno-sign-compare -Werror=implicit-function-declaration -Werror=vla -pedantic -lm -pass-exit-codes",
+    "compiler_options_debug": "-std=c++11 -ggdb -lm -pass-exit-codes",
+    "compile": "true",
+    "run": "false",
+    "test": "true",
+    "debug": "true",
+    "profile": "true",
+    "test_specifications": [
+        {
+            "id": 1907,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/ Osnovni test funkcionalnosti HashMapaLan\nHashMapaLan<std::string,std::string> m;\nm.definisiHashFunkciju(djbhash);\nm[\"Sarajevo\"] = \"BiH\";\nm[\"Zagreb\"] = \"Hrvatska\";\ncout << m.brojElemenata() << \" \" << m[\"Zagreb\"] << \" '\"; \/\/ 2 Hrvatska\n\n\/\/ Test praznih elemenata\ncout << m[\"Beograd\"] <<\"' '\"; \/\/ ''\ncout << m[\"zagreb\"] << \"' \"; \/\/ ''\nm.obrisi(\"Zagreb\");\n\n\/\/ Potpuno korektna HashMapaLan nece kreirati objekte \"Beograd\" i \"zagreb\"\n\/\/ jer oni nemaju vrijednosti pa ce se ispod ispisati 1\n\/\/ Ali to zahtijeva implementaciju \"Pristupnika\" pa cemo priznavati\n\/\/ rjesenje koje ispise broj 3\ncout << m.brojElemenata(); \/\/ 3 ili 1\n\n\/\/ Test brisanja\ncout << \" '\" << m[\"Zagreb\"] << \"' \" ; \/\/ ''\nm.obrisi();\ncout << m.brojElemenata(); \/\/ 0\ncout << \" '\" << m[\"Sarajevo\"] << \"' \"; \/\/ ''",
+            "global_above_main": "#include <string>\nunsigned int djbhash(std::string ulaz, unsigned int max) {\n\tunsigned int suma=5381; \n\/\/ 5381 je pocetna vrijednost \n\/\/ koja poboljsava distribuciju\n\tfor (int i(0); i<ulaz.length(); i++)\n\t\tsuma = suma*33 + ulaz[i];\n\treturn suma % max;\n}",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "2 Hrvatska '' '' 1 '' 0 ''",
+                "2 Hrvatska '' '' 3 '' 0 ''"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1908,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "HashMapaLan<std::string,std::string> m;\nm.definisiHashFunkciju(djbhash);\nm[\"Sarajevo\"] = \"BiH\";\nm[\"Zagreb\"] = \"Hrvatska\";\n{\n        \/\/ Konstruktor kopije\n\tHashMapaLan<std::string,std::string> m2(m);\n        \/\/ Operator dodjele\n\tHashMapaLan<std::string,std::string> m3;\n\tm3.definisiHashFunkciju(djbhash);\n\tm3[\"Kiseljak\"] = \"BiH\";\n\tcout << (m3=m).brojElemenata() << \" \"; \/\/ 2\n        \/\/ Destruktivna samododjela\n\tcout << (m=m).brojElemenata() << \" \"; \/\/ 2\n\n        \/\/ Plitka kopija\n\tm.obrisi(\"Sarajevo\");\n\tcout << m2.brojElemenata() << \" \"; \/\/ 2\n        cout << m2[\"Sarajevo\"] << \" \"; \/\/ BiH\n        cout << m3.brojElemenata() << \" \"; \/\/ 2\n        cout << m3[\"Sarajevo\"] << \" \"; \/\/ BiH\n}\ncout << m.brojElemenata(); \/\/ 1\ncout << \" '\" << m[\"Sarajevo\"] << \"' \"; \/\/ ''\nm.obrisi();\ncout << m.brojElemenata(); \/\/ 0\ncout << \" '\" << m[\"Zagreb\"] << \"'\"; \/\/ ''",
+            "global_above_main": "#include <string>\nunsigned int djbhash(std::string ulaz, unsigned int max) {\n\tunsigned int suma=5381; \n\/\/ 5381 je pocetna vrijednost \n\/\/ koja poboljsava distribuciju\n\tfor (int i(0); i<ulaz.length(); i++)\n\t\tsuma = suma*33 + ulaz[i];\n\treturn suma % max;\n}",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "2 2 2 BiH 2 BiH 1 '' 0 ''"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1909,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/ Test rada sa tipom koji nema default konstruktor (std::vector)\nHashMapaLan <std::string, std::vector<std::string> > m;\nm.definisiHashFunkciju(djbhash);\nstd::vector<std::string> gradovi;\ngradovi.push_back(\"Sarajevo\");\ngradovi.push_back(\"Mostar\");\ngradovi.push_back(\"Banja Luka\");\nm[\"BiH\"]=gradovi;\ncout << m[\"BiH\"].size() << \" \";\nm[\"BiH\"].push_back(\"Tuzla\");\ncout << m[\"BiH\"][0] << \" \" << m[\"BiH\"][3] << \" \" << m[\"BiH\"].size();",
+            "global_above_main": "#include <string>\n#include <vector>\nunsigned int djbhash(std::string ulaz, unsigned int max) {\n\tunsigned int suma=5381; \n\/\/ 5381 je pocetna vrijednost \n\/\/ koja poboljsava distribuciju\n\tfor (int i(0); i<ulaz.length(); i++)\n\t\tsuma = suma*33 + ulaz[i];\n\treturn suma % max;\n}",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "3 Sarajevo Tuzla 4"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1910,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/ Const korektnost i test rada sa tipom int\nHashMapaLan <int, int> m;\nm.definisiHashFunkciju(mojhash);\nm[100] = 200;\nconst HashMapaLan <int, int>& m2(m);\nm[200] = 300;\ncout << m2.brojElemenata() << \" \"; \/\/ 2\ncout << m2[200] << \" \"; \/\/ 300\n\n\/\/ Ovdje se sigurno nece kreirati objekat m2[300] jer je m2 const\ncout << m2[300] << \" \"; \/\/ 0\ncout << m2.brojElemenata() << \" \"; \/\/ 2\nm[300] = 400;\ncout << m2[300] << \" \"; \/\/ 400\ncout << m2.brojElemenata(); \/\/ 3",
+            "global_above_main": "unsigned int mojhash(int ulaz, unsigned int max) {\n\tunsigned int suma=23; \n\tsuma = suma*31 + ulaz;\n\treturn suma % max;\n}",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "2 300 0 2 400 3"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1911,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "HashMapaLan<std::string,std::string> m;\n\/\/ Nije definisana hash funkcija!\nstd::string s1(\"Sarajevo\"), s2(\"Zagreb\");\nm[s1] = \"BiH\";\nm[s2] = \"Hrvatska\";\nstd::cout << m.brojElemenata() << \" \" << m[s2];",
+            "global_above_main": "#include <string>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                ""
+            ],
+            "expected_exception": "true",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 2103,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "HashMapaLan<int, int> m;\nm.definisiHashFunkciju(glupihash);\n\/\/ Test ponasanja sa velikim brojem kolizija\nm[1] = 100;\nm[2] = 200;\nm[3] = 300;\nm[4] = 400;\nm[5] = 500;\ncout << m[1] << \" \";\nm.obrisi(2);\ncout << m[1] << \" \" << m[3] << \" \";\ncout << m[4] << \" \" << m[5] << \" \";\ncout << m[2];",
+            "global_above_main": "\/\/ Hash funkcija koja uvijek vraca isto\nunsigned int glupihash(int ulaz, \nunsigned int max) {\n\treturn max-1;\n}",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "100 100 300 400 500 0"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 2104,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "HashMapaLan<int, int> m;\nm.definisiHashFunkciju(glupihash);\n\/\/ Test ponasanja sa velikim brojem kolizija\nfor (int i(0); i<1002; i++)\n   m[i]=i+10000;\ncout << m[1001];",
+            "global_above_main": "\/\/ Hash funkcija koja uvijek vraca isto\nunsigned int glupihash(int ulaz, \nunsigned int max) {\n\treturn max-1;\n}",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "11001"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 2105,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "UsmjereniGraf<bool> *g = new ListaGraf<bool>(6);\n  g->dodajGranu(0, 1, 2.5);\n  g->dodajGranu(1, 2, 1.2);\n  g->dodajGranu(1, 3, 0.1);\n  g->dodajGranu(3, 3, -4.0);\n  g->dodajGranu(2, 4, 3.14);\n  g->dodajGranu(2, 3, 2.73);\n  g->dodajGranu(3, 5, 1);\n  g->dodajGranu(5, 2, -5.0);\n  for (int i = 0; i < 6; i++)\n    for (int j = 0; j < 6; j++)\n      cout << g->postojiGrana(i, j);\n  delete g;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "010000001100000110000101000000001000"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 2106,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "UsmjereniGraf<bool> *g = new ListaGraf<bool>(6);\n  g->dodajGranu(0, 1, 2.5);\n  g->dodajGranu(1, 2, 1.2);\n  g->dodajGranu(1, 3, 0.1);\n  g->dodajGranu(3, 3, -4.0);\n  g->dodajGranu(2, 4, 3.14);\n  g->dodajGranu(2, 3, 2.73);\n  g->dodajGranu(3, 5, 1);\n  g->dodajGranu(5, 2, -5.0);\n  g->obrisiGranu(1,2);\n  g->obrisiGranu(3,5);\n  for (int i = 0; i < 6; i++)\n    for (int j = 0; j < 6; j++)\n      cout << g->postojiGrana(i, j);\n  delete g;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "010000000100000110000100000000001000"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 2107,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "UsmjereniGraf<bool> *g = new ListaGraf<bool>(4);\n  g->dodajGranu(0, 1, 2.5);\n  g->dodajGranu(1, 2, 1.2);\n  g->dodajGranu(1, 3, 0.1);\n  g->dodajGranu(3, 3, -4.0);\n  g->postaviTezinuGrane(1, 2, 0.2);\n  for (int i = 0; i < 4; i++)\n    for (int j = 0; j < 4; j++)\n      if (g->postojiGrana(i,j))\n        cout << \"(\" << i << \",\" << j << \") -> \" << g->dajTezinuGrane(i, j) << \"; \";\n  delete g;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "(0,1) -> 2.5; (1,2) -> 0.2; (1,3) -> 0.1; (3,3) -> -4;"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 2108,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "UsmjereniGraf<std::string> *g = new ListaGraf<std::string>(4);\n  g->dodajGranu(0, 1, 2.5);\n  g->dodajGranu(1, 2, 1.2);\n  g->dodajGranu(1, 3, 0.1);\n  g->dodajGranu(3, 3, -4.0);\n  g->postaviOznakuGrane(1, 3, \"aa\");\n  for (int i = 0; i < 4; i++)\n    for (int j = 0; j < 4; j++)\n      if (g->postojiGrana(i,j))\n        cout << \"(\" << i << \",\" << j << \") -> '\" << g->dajOznakuGrane(i, j) << \"'; \";\n  delete g;",
+            "global_above_main": "#include<string>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "(0,1) -> ''; (1,2) -> ''; (1,3) -> 'aa'; (3,3) -> '';"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 2109,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "UsmjereniGraf<std::string> *g = new ListaGraf<std::string>(4);\n  g->postaviOznakuCvora(0,\"a\");\n  g->postaviOznakuCvora(1,\"bcd\");\n  for (int i = 0; i < 4; i++)\n      cout << \"(\" << i << \") -> '\" << g->dajOznakuCvora(i) << \"'; \";\n  delete g;",
+            "global_above_main": "#include<string>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "(0) -> 'a'; (1) -> 'bcd'; (2) -> ''; (3) -> '';"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 2110,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "UsmjereniGraf<std::string> *g = new ListaGraf<std::string>(4);\n  cout << g->dajCvor(0).dajRedniBroj() << \"; \";\n  g->postaviOznakuCvora(1, \"aaa\");\n  g->dajCvor(2).postaviOznaku(\"bbb\");\n  for (int i = 0; i < 4; i++)\n      cout << \"(\" << i << \") -> '\" << g->dajOznakuCvora(i) << \"','\" << g->dajCvor(i).dajOznaku() << \"'; \";\n  delete g;",
+            "global_above_main": "#include<string>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "0; (0) -> '',''; (1) -> 'aaa','aaa'; (2) -> 'bbb','bbb'; (3) -> '','';"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 2111,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "UsmjereniGraf<std::string> *g = new ListaGraf<std::string>(4);\n  g->dodajGranu(0, 1, 2.5);\n  g->dodajGranu(1, 2, 1.2);\n  g->dodajGranu(1, 3, 0.1);\n  g->dodajGranu(3, 3, -4.0);\n  g->postaviOznakuGrane(3, 3, \"aa\");\n  g->dajGranu(0,1).postaviOznaku(\"bb\");\n  for (int i = 0; i < 4; i++)\n    for (int j = 0; j < 4; j++)\n      if (g->postojiGrana(i,j))\n        cout << \"(\" << i << \",\" << j << \") -> '\" << g->dajOznakuGrane(i, j) << \"','\" << g->dajGranu(i, j).dajOznaku() << \"'; \";\ndelete g;",
+            "global_above_main": "#include<string>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "(0,1) -> 'bb','bb'; (1,2) -> '',''; (1,3) -> '',''; (3,3) -> 'aa','aa';"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 2112,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "UsmjereniGraf<bool> *g = new ListaGraf<bool>(6);\n    g->dodajGranu(0, 1, 2.5);\n    g->dodajGranu(1, 0, 1.2);\n    g->dodajGranu(1, 2, 0.1);\n    g->dodajGranu(0, 0, 3.14);\n    for (GranaIterator<bool> iter = g->dajGranePocetak();\n         iter != g->dajGraneKraj(); ++iter)\n      cout << \"(\" << (*iter).dajPolazniCvor().dajRedniBroj() << \",\"\n           << (*iter).dajDolazniCvor().dajRedniBroj() << \") -> \"\n           << (*iter).dajTezinu() << \"; \";\n  delete g;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "(0,0) -> 3.14; (0,1) -> 2.5; (1,0) -> 1.2; (1,2) -> 0.1;",
+                "(0,1) -> 2.5; (0,0) -> 3.14; (1,0) -> 1.2; (1,2) -> 0.1;"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 2113,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "ListaGraf<bool> g(6);\ng.dodajGranu(0, 1, 0);\ncout << g.postojiGrana(0,1);\ncout << g.postojiGrana(0,2);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "10"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 2114,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "UsmjereniGraf<bool> *g = new ListaGraf<bool>(6);\n    g->dodajGranu(0, 1, 2.5);\n    g->dodajGranu(1, 2, 1.2);\n    g->dodajGranu(1, 3, 0.1);\n    g->dodajGranu(2, 4, 3.14);\n    g->dodajGranu(2, 3, 2.73);\n    g->dodajGranu(3, 5, 1);\n    g->dodajGranu(5, 2, -5.0);\n    std::vector<Cvor<bool> > dfs_obilazak;\n    dfs(g, dfs_obilazak, g->dajCvor(0));\n    for (int i = 0; i < dfs_obilazak.size(); i++)\n      cout << dfs_obilazak[i].dajRedniBroj() << \",\";\n  delete g;",
+            "global_above_main": "#include <vector>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "0,1,2,3,5,4,",
+                "0,1,2,4,3,5,"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 2115,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "UsmjereniGraf<bool> *g = new ListaGraf<bool>(6);\n    g->dodajGranu(0, 1, 2.5);\n    g->dodajGranu(1, 2, 1.2);\n    g->dodajGranu(1, 3, 0.1);\n    g->dodajGranu(2, 4, 3.14);\n    g->dodajGranu(2, 3, 2.73);\n    g->dodajGranu(3, 5, 1);\n    g->dodajGranu(5, 2, -5.0);\n    std::vector<Cvor<bool> > bfs_obilazak;\n    bfs(g, bfs_obilazak, g->dajCvor(0));\n    for (int i = 0; i < bfs_obilazak.size(); i++)\n      cout << bfs_obilazak[i].dajRedniBroj() << \",\";\n  delete g;",
+            "global_above_main": "#include <vector>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "0,1,2,3,4,5,"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 2116,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "UsmjereniGraf<std::string> *g = new ListaGraf<std::string>(4);\n  g->dodajGranu(0, 1, 2.5);\n  g->dodajGranu(1, 2, 1.2);\n  g->dodajGranu(1, 3, 0.1);\n  g->dodajGranu(3, 3, -4.0);\n  g->postaviOznakuGrane(3, 3, \"aa\");\n  Grana<std::string> grana = g->dajGranu(0,1);\n  grana.postaviOznaku(\"bb\");\n  grana.postaviTezinu(3.5);\n  for (int i = 0; i < 4; i++)\n    for (int j = 0; j < 4; j++)\n      if (g->postojiGrana(i,j)) {\n        cout << \"(\" << i << \",\" << j << \") -> '\" << g->dajOznakuGrane(i, j) << \"','\" << g->dajGranu(i, j).dajOznaku();\n        cout << \"',\" << g->dajTezinuGrane(i, j) << \"; \";\n      }\ndelete g;",
+            "global_above_main": "#include <string>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "(0,1) -> 'bb','bb',3.5; (1,2) -> '','',1.2; (1,3) -> '','',0.1; (3,3) -> 'aa','aa',-4;"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        }
+    ]
+}

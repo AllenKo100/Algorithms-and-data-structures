@@ -1,0 +1,519 @@
+{
+    "id": 4123,
+    "name": "Algoritmi i strukture podataka (2016\/2017), Pripremna Zadaca Za Tutorijal 2, zadatak 1",
+    "language": "C++",
+    "required_compiler": "g++",
+    "preferred_compiler": "g++",
+    "compiler_features": [
+
+    ],
+    "compiler_options": "-std=c++11 -O1 -Wall -Wuninitialized -Winit-self -Wfloat-equal -Wno-sign-compare -Werror=implicit-function-declaration -Werror=vla -pedantic -lm -pass-exit-codes",
+    "compiler_options_debug": "-std=c++11 -ggdb -lm -pass-exit-codes",
+    "compile": "true",
+    "run": "false",
+    "test": "true",
+    "debug": "true",
+    "profile": "true",
+    "test_specifications": [
+        {
+            "id": 4124,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Lista<int>* l;\nl = new JednostrukaLista<int>;\nfor (int i(0); i<40000; i++)\n    l->dodajIspred(5);\nstd::cout << l->trenutni();\ndelete l;",
+            "global_above_main": "#include <iostream>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 4125,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Lista<std::string>* l;\nl = new JednostrukaLista<std::string>;\nl->dodajIza(\"abc\");\nstd::string s = l->trenutni();\t\nstd::cout << s;\ndelete l;",
+            "global_above_main": "",
+            "global_top": "#include <string>\n#include <iostream>",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "abc"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1271,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "  JednostrukaLista<int> jednostruka;\n    NizLista<int> nizLista;\n    jednostruka.dodajIspred(1);\n    nizLista.dodajIspred(1);\n    cout<<jednostruka.trenutni()<<\" \"<<nizLista.trenutni()<<endl;\n    jednostruka.obrisi();\n    nizLista.obrisi();\n    jednostruka.dodajIza(1);\n    jednostruka.dodajIza(2);\n    jednostruka.dodajIza(8);\n    nizLista.dodajIza(1);\n    nizLista.dodajIza(2);\n    nizLista.dodajIza(8);\n    cout<<jednostruka.trenutni()<<\" \"<<nizLista.trenutni()<<endl;\n    jednostruka.dodajIza(3);\n    jednostruka.dodajIza(4);\n    jednostruka.dodajIza(5);\n    nizLista.dodajIza(3);\n    nizLista.dodajIza(4);\n    nizLista.dodajIza(5);\n    jednostruka.pocetak();\n    nizLista.pocetak();\n    jednostruka.kraj();\n    nizLista.kraj();\n    cout<<jednostruka.trenutni()<<\" \"<<nizLista.trenutni()<<endl;\n    jednostruka.pocetak();\n    nizLista.pocetak();\n    cout<<jednostruka.trenutni()<<\" \"<<nizLista.trenutni()<<endl;\n    jednostruka.sljedeci();\n    nizLista.sljedeci();\n    cout<<jednostruka.trenutni()<<\" \"<<nizLista.trenutni()<<endl;\n    jednostruka.prethodni();\n    nizLista.prethodni();\n    cout<<jednostruka.trenutni()<<\" \"<<nizLista.trenutni()<<endl;\n    cout<<jednostruka[1]<<\" \"<<nizLista[1]<<endl;\n    cout<<jednostruka.brojElemenata()<<\" \"<<nizLista.brojElemenata()<<endl;\n    jednostruka.pocetak();\n    nizLista.pocetak();\n    for(int i=0;i<jednostruka.brojElemenata();i++){\n        cout<<jednostruka.trenutni()<<\" \";\n        jednostruka.sljedeci();\n    }\n    cout<<endl;\n    for(int i=0;i<nizLista.brojElemenata();i++){\n        cout<<nizLista.trenutni()<<\" \";\n        nizLista.sljedeci();\n    }\n    cout<<endl;",
+            "global_above_main": "#include <iostream>\n#include <typeinfo>\nusing namespace std;",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1 1\\n1 1\\n2 2\\n1 1\\n5 5\\n1 1\\n5 5\\n6 6\\n1 5 4 3 8 2 \\n1 5 4 3 8 2 \\n"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1272,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "NizLista<int> niz;\nfor (int i(1); i<=5; i++)\n\tniz.dodajIspred(i);\n{\n    NizLista<int> niz2(niz);\n    NizLista<int> niz3;\n    niz3=niz;\n    niz.obrisi();\n    std::cout << niz2.brojElemenata();\n    std::cout << \" \" << niz3.brojElemenata() << \" \";\n}\nstd::cout << niz.brojElemenata();",
+            "global_above_main": "#include <iostream>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5 5 4"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1273,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "JednostrukaLista<int> lista;\nfor (int i(1); i<=5; i++)\n\tlista.dodajIspred(i);\n{\n    JednostrukaLista<int> lista2(lista);\n    JednostrukaLista<int> lista3;\n    lista3=lista;\n    lista.obrisi();\n    std::cout << lista2.brojElemenata();\n    std::cout << \" \" << lista3.brojElemenata() << \" \";\n}\nstd::cout << lista.brojElemenata();",
+            "global_above_main": "#include <iostream>",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5 5 4"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1274,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Lista<int>* l;\nl = new NizLista<int>;\nfor (int i(0); i<100000; i++)\n    l->dodajIspred(5);\nstd::cout << l->trenutni();\ndelete l;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1562,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Lista<std::string>* l;\nl = new NizLista<std::string>;\nl->dodajIza(\"abc\");\nstd::string s = l->trenutni();\t\nstd::cout << s;\ndelete l;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "abc"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1563,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Lista<int>* l;\nl = new NizLista<int>;\nfor (int i(1); i<=5; i++)\n\tl->dodajIza(i);\ndo {\n\tstd::cout << l->trenutni() << \" \";\n} while(l->sljedeci());\ndelete l;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1 5 4 3 2"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1564,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Lista<int>* l;\nl = new JednostrukaLista<int>;\nfor (int i(1); i<=5; i++)\n\tl->dodajIza(i);\nl->pocetak();\ndo {\n\tstd::cout << l->trenutni() << \" \";\n} while(l->sljedeci());\ndelete l;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1 5 4 3 2"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1565,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Lista<int>* l;\nl = new NizLista<int>;\nfor (int i(1); i<=5; i++)\n\tl->dodajIspred(i);\nfor (int i(0); i<5; i++)\n\tstd::cout << (*l)[i] << \" \";\ndelete l;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "2 3 4 5 1"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1566,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "Lista<int>* l;\nl = new JednostrukaLista<int>;\nfor (int i(1); i<=5; i++)\n\tl->dodajIspred(i);\nfor (int i(0); i<5; i++)\n\tstd::cout << (*l)[i] << \" \";\ndelete l;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "2 3 4 5 1"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1567,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "NizLista<int> niz;\nfor (int i(1); i<=10000; i++)\n\tniz.dodajIspred(i);\nstd::cout << niz.brojElemenata() << \" \";\nfor (int i(1); i<=10000; i++)\n\tniz.obrisi();\nstd::cout << niz.brojElemenata();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "10000 0"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1568,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "NizLista<int> niz;\nfor (int i(1); i<=5; i++)\n\tniz.dodajIza(i);\nstd::cout << niz.brojElemenata() << \" \";\nfor (int i(1); i<=5; i++)\n\tniz.obrisi();\nstd::cout << niz.brojElemenata();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5 0"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1569,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "JednostrukaLista<int> lista;\nfor (int i(1); i<=10000; i++)\n\tlista.dodajIspred(i);\nstd::cout << lista.brojElemenata() << \" \";\nfor (int i(1); i<=10000; i++)\n\tlista.obrisi();\nstd::cout << lista.brojElemenata();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "10000 0"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1570,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "JednostrukaLista<int> lista;\nfor (int i(1); i<=5; i++)\n\tlista.dodajIza(i);\nstd::cout << lista.brojElemenata() << \" \";\nfor (int i(1); i<=5; i++)\n\tlista.obrisi();\nstd::cout << lista.brojElemenata();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5 0"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1571,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "JednostrukaLista<int> n;\nfor (int i(1); i<=5; i++) {\n\tn.dodajIza(i);\n\tn.sljedeci();\n}\nn.pocetak();\nn.sljedeci();\nn.sljedeci();\nn.obrisi();\nfor (int i(0); i<n.brojElemenata(); i++)\n\tstd::cout << n[i] << \" \";\nstd::cout << n.trenutni();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1 2 4 5 4"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1572,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "NizLista<int> n;\nn.dodajIza(5);\nconst int& x(n[0]);\nn.dodajIspred(10);\nstd::cout << x;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1573,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "NizLista<int> niz;\nfor (int i(1); i<=5; i++)\n\tniz.dodajIspred(i);\nconst NizLista<int>& konst(niz);\nstd::cout << konst.brojElemenata() << \" \" << konst.trenutni();\nstd::cout << \" \" << konst[0] << std::endl;\nniz.trenutni() = 15;\nniz[0] = 20;\nstd::cout << konst.trenutni() << \" \" << konst[0] << std::endl;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5 1 2\\n15 20"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1574,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "JednostrukaLista<int> lista;\nfor (int i(1); i<=5; i++)\n\tlista.dodajIspred(i);\nconst JednostrukaLista<int>& konst(lista);\nstd::cout << konst.brojElemenata() << \" \" << konst.trenutni();\nstd::cout << \" \" << konst[0] << std::endl;\nlista.trenutni() = 15;\nlista[0] = 20;\nstd::cout << konst.trenutni() << \" \" << konst[0] << std::endl;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5 1 2\\n15 20"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1575,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "NizLista<int> n;\nfor (int i(1); i<=5; i++) {\n\tn.dodajIza(i);\n\tn.sljedeci();\n}\nn.pocetak();\nn.sljedeci();\nn.sljedeci();\nn.obrisi();\nfor (int i(0); i<n.brojElemenata(); i++)\n\tstd::cout << n[i] << \" \";\nstd::cout << n.trenutni();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1 2 4 5 4"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        }
+    ]
+}

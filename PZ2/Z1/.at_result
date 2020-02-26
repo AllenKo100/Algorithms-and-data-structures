@@ -1,0 +1,312 @@
+{
+    "buildhost_description": {
+        "id": "lab002c03",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n",
+        "compiler_version": "g++ (GCC) 6.2.0",
+        "debugger_version": "GNU gdb (GDB) 7.12",
+        "profiler_version": "valgrind-3.12.0"
+    },
+    "status": 4,
+    "compile_result": {
+        "status": 1,
+        "output": "main.cpp: In instantiation of ‘JednostrukaLista<Tip>::JednostrukaLista(const JednostrukaLista<Tip>&) [with Tip = int]’:\nmain.cpp:540:34:   required from here\nmain.cpp:230:41: warning: variable ‘temp’ set but not used [-Wunused-but-set-variable]\n             Cvor<Tip>* klizni=l.lista, *temp;\n                                         ^~~~",
+        "parsed_output": [
+            {
+                "type": "warning",
+                "file": "main.cpp",
+                "line": "230",
+                "col": "41",
+                "message": "variable 'temp' set but not used",
+                "output": "/tmp/buildservice/bs_1155/main.cpp:230:41: warning: variable ‘temp’ set but not used [-Wunused-but-set-variable]             Cvor<Tip>* klizni=l.lista, *temp;                                         ^~~~",
+                "code": "Cvor<Tip>* klizni=l.lista, *temp;"
+            }
+        ]
+    },
+    "run_result": [],
+    "debug_result": [],
+    "profile_result": [],
+    "test_results": {
+        "1271": {
+            "status": 1,
+            "run_result": {
+                "output": "1 1\n1 1\n2 2\n1 1\n5 5\n1 1\n5 5\n6 6\n1 5 4 3 8 2 \n1 5 4 3 8 2 \n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1272": {
+            "status": 1,
+            "run_result": {
+                "output": "5 5 4",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1273": {
+            "status": 1,
+            "run_result": {
+                "output": "5 5 4",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1274": {
+            "status": 1,
+            "run_result": {
+                "output": "5",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1562": {
+            "status": 1,
+            "run_result": {
+                "output": "abc",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1563": {
+            "status": 1,
+            "run_result": {
+                "output": "1 5 4 3 2 ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1564": {
+            "status": 1,
+            "run_result": {
+                "output": "1 5 4 3 2 ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1565": {
+            "status": 1,
+            "run_result": {
+                "output": "2 3 4 5 1 ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1566": {
+            "status": 1,
+            "run_result": {
+                "output": "2 3 4 5 1 ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1567": {
+            "status": 1,
+            "run_result": {
+                "output": "10000 0",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1568": {
+            "status": 1,
+            "run_result": {
+                "output": "5 0",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1569": {
+            "status": 1,
+            "run_result": {
+                "output": "10000 0",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1570": {
+            "status": 1,
+            "run_result": {
+                "output": "5 0",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1571": {
+            "status": 1,
+            "run_result": {
+                "output": "1 2 4 5 4",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1572": {
+            "status": 1,
+            "run_result": {
+                "output": "5",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1573": {
+            "status": 1,
+            "run_result": {
+                "output": "5 1 2\n15 20\n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1574": {
+            "status": 1,
+            "run_result": {
+                "output": "5 1 2\n15 20\n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "1575": {
+            "status": 1,
+            "run_result": {
+                "output": "1 2 4 5 4",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "4124": {
+            "status": 1,
+            "run_result": {
+                "output": "5",
+                "duration": 3,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "4125": {
+            "status": 1,
+            "run_result": {
+                "output": "abc",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        }
+    },
+    "queue_items": 0,
+    "time": 1573672313
+}

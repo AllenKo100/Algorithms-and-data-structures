@@ -1,0 +1,21 @@
+TEST1
+Ovaj stek ima 4 elementa, nas ispis je: 4
+TEST2
+Ovaj stek ima 10 elementa, nas ispis je: 10
+Ovaj stek sada ima 7 elemenata, nas ispis je: 7
+Stek nakon brisanja treba imati 0 elemenata, nas ispis je: 0
+TEST3
+Vrh ovog steka je 20, nas ispis je: 20
+Sada je vrh naseg steka 19, nas ispis je: 19
+TEST4
+Broj elemenata je 1, nas ispis je: 1
+Broj elemenata je 0, nas ispis: 0
+TEST5
+Broj elemenata je 6, nas ispis je: 6
+Element na vrhu je 50, nas ispis je: 50
+Element na vrhu je 40, nas ispis je: 40
+Element na vrhu je 30, nas ispis je: 30
+Element na vrhu je 20, nas ispis je: 20
+Element na vrhu je 10, nas ispis je: 10
+Element na vrhu je 0, nas ispis je: 0
+Prosli su svi testovi !

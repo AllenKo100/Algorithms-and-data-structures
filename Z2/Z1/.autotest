@@ -1,0 +1,169 @@
+{
+    "id": 1442,
+    "name": "Algoritmi i strukture podataka (2016\/2017), Zadaca 2, zadatak 1",
+    "language": "C++",
+    "required_compiler": "g++",
+    "preferred_compiler": "g++",
+    "compiler_features": [
+
+    ],
+    "compiler_options": "-std=c++11 -O1 -Wall -Wuninitialized -Winit-self -Wfloat-equal -Wno-sign-compare -Werror=implicit-function-declaration -Werror=vla -pedantic -lm -pass-exit-codes",
+    "compiler_options_debug": "-std=c++11 -ggdb -lm -pass-exit-codes",
+    "compile": "true",
+    "run": "false",
+    "test": "true",
+    "debug": "true",
+    "profile": "true",
+    "test_specifications": [
+        {
+            "id": 1443,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "DvostraniRed<int> dr;\nfor (int i(10); i<=50; i+=10)\n\tdr.staviNaVrh(i);\nstd::cout << dr.brojElemenata() << \" \" << dr.vrh() << \" \";\ndr.brisi();\nfor (int i(10); i<=50; i+=10)\n\tdr.staviNaVrh(i);\nstd::cout << dr.brojElemenata() << \" \";\nfor (int i(1); i<=5; i++)\n\tstd::cout << dr.skiniSaVrha() << \" \";\nstd::cout << dr.brojElemenata();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5 50 5 50 40 30 20 10 0"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1455,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "DvostraniRed<int> dr;\nfor (int i(10); i<=50; i+=10)\n\tdr.staviNaVrh(i);\nstd::cout << dr.brojElemenata() << \" \" << dr.celo() << \" \";\ndr.brisi();\nfor (int i(10); i<=50; i+=10)\n\tdr.staviNaVrh(i);\nstd::cout << dr.brojElemenata() << \" \";\nfor (int i(1); i<=5; i++)\n\tstd::cout << dr.skiniSaCela() << \" \";\nstd::cout << dr.brojElemenata();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "5 10 5 10 20 30 40 50 0"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1456,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "int brel;\nDvostraniRed<int> dr;\nfor (int i(1); i<=5; i++)\n\tdr.staviNaVrh(i);\nfor (int i(1); i<=5; i++)\n\tdr.staviNaCelo(i);\n{\n        \/\/ Konstruktor kopije\n\tDvostraniRed<int> dr2(dr);\n\tDvostraniRed<int> dr3;\n        dr3.staviNaVrh(150);\n        \/\/ Operator dodjele\n\tstd::cout << (dr3=dr).brojElemenata() << \" \";\n        \/\/ Destruktivna samododjela\n        std::cout << (dr=dr).brojElemenata() << std::endl;\n\n\tdr.skiniSaVrha();\n\tbrel = dr2.brojElemenata();\n\tfor (int i(0); i<brel; i++)\n\t\tstd::cout << dr2.skiniSaVrha() << \" \";\n\tstd::cout << std::endl;\n\tbrel = dr3.brojElemenata();\n\tfor (int i(0); i<brel; i++)\n\t\tstd::cout << dr3.skiniSaVrha() << \" \";\n\tstd::cout << std::endl;\n}\nbrel = dr.brojElemenata();\nfor (int i(0); i<brel; i++)\n\tstd::cout << dr.skiniSaVrha() << \" \";",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "10 10\\n5 4 3 2 1 1 2 3 4 5 \\n5 4 3 2 1 1 2 3 4 5 \\n4 3 2 1 1 2 3 4 5"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1457,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/\/ Test performansi (sve metode trebaju biti O(1) )\nDvostraniRed<int> dr;\nfor (int i(0); i<400000; i++)\ndr.staviNaVrh(i);\nstd::cout << dr.vrh() << std::endl;\nfor (int i(0); i<399999; i++)\ndr.skiniSaVrha();\nstd::cout << dr.vrh() << std::endl;\ndr.skiniSaVrha();\n\nfor (int i(0); i<400000; i++)\ndr.staviNaCelo(i);\nstd::cout << dr.celo() << std::endl;\nfor (int i(0); i<399999; i++)\ndr.skiniSaCela();\nstd::cout << dr.celo();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "399999\\n0\\n399999\\n0"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1458,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "DvostraniRed<int> dr;\nfor (int i(100); i<110; i+=2) {\n\tdr.staviNaVrh(i);\n\tdr.staviNaCelo(i);\n}\nstd::cout << dr.brojElemenata() << \" \" << dr.vrh() << \" \" << dr.celo() << std::endl;\nfor (int i(0); i<10; i++)\n\tstd::cout << dr.skiniSaVrha() << \" \";\nstd::cout << std::endl;\ntry { dr.skiniSaVrha(); } catch(...) {\n\tstd::cout << \"ok \";\n}\ntry { dr.skiniSaCela(); } catch(...) {\n\tstd::cout << \"ok \";\n}\ntry { dr.vrh(); } catch(...) {\n\tstd::cout << \"ok \";\n}\ntry { dr.celo(); } catch(...) {\n\tstd::cout << \"ok \";\n}\nfor (int i(100); i<110; i+=2) {\n\tdr.staviNaVrh(i);\n\tdr.staviNaCelo(i);\n}\nstd::cout << dr.brojElemenata() << \" \" << dr.vrh() << \" \" << dr.celo();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "10 108 108\\n108 106 104 102 100 100 102 104 106 108 \\nok ok ok ok 10 108 108"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 1459,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "DvostraniRed<int> dr;\nfor (int i(100); i<110; i+=2) {\n\tdr.staviNaVrh(i);\n\tdr.staviNaCelo(i);\n}\nfor (int i(0); i<10; i++)\n\tstd::cout << dr.skiniSaCela() << \" \";\nstd::cout << std::endl;\ntry { dr.skiniSaVrha(); } catch(...) {\n\tstd::cout << \"ok \";\n}\ntry { dr.skiniSaCela(); } catch(...) {\n\tstd::cout << \"ok \";\n}\ntry { dr.vrh(); } catch(...) {\n\tstd::cout << \"ok \";\n}\ntry { dr.celo(); } catch(...) {\n\tstd::cout << \"ok \";\n}\nfor (int i(100); i<110; i+=2) {\n\tdr.staviNaVrh(i);\n\tdr.staviNaCelo(i);\n}\nstd::cout << dr.brojElemenata() << \" \" << dr.vrh() << \" \" << dr.celo() << std::endl;",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "108 106 104 102 100 100 102 104 106 108 \\nok ok ok ok 10 108 108"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        }
+    ]
+}
